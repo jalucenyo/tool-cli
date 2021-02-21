@@ -1,0 +1,19 @@
+version: '3.7'
+networks:
+  devnet:
+    external: true
+
+
+services:
+  couchbase:
+    image: couchbase
+    container_name: couchbase
+    networks:
+      - devnet
+    ports:
+      - 8091-8094:8091-8094
+      - 11210:11210
+      - 30173:11210
+      - 31760:8091
+    volumes:
+      - ./data/couchbase:/opt/couchbase/var

@@ -1,0 +1,24 @@
+{
+  "clone": {
+    "repositories" : [
+      { "url": "https://repository.git", "folder" : "project1" },
+      { "url": "https://repository.git", "folder" : "project2" }
+    ]
+  },
+  "start" : {
+    "minimal" : [ "postgres", "couchbase" ]
+  },
+  "database" : {
+    "source" : "postgres",
+    "copy" : {
+      "origin" : {
+        "uri" : "jdbc:postgresql://localhost:5432/db1",
+        "schema" : "schema01"
+      },
+      "destination" : {
+        "uri" : "jdbc:postgresql://localhost:5432/db2",
+        "schema": "schema01"
+      }
+    }
+  }
+}

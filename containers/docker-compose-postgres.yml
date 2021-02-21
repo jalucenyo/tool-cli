@@ -1,0 +1,18 @@
+version: '3.7'
+networks:
+  devnet:
+    external: true
+
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    networks:
+      - devnet
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./data/postgress:/var/lib/postgresql/data
